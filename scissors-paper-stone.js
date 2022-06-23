@@ -1,5 +1,5 @@
-const options_0 = ["scissor", "paper", "rock"];
-const options_1 = ["scissor", "paper", "rock", "lizard", "spock"];
+const options_0 = ["Scissor", "Paper", "Rock"];
+const options_1 = ["Scissor", "Paper", "Rock", "Lizard", "Spock"];
 let result = 0;
 let game_mode = 0; 
 let computer_score = 0;
@@ -29,6 +29,7 @@ const endgametext = document.getElementById("endgametext");
 const reset_btn = document.getElementById("reset_btn");
 
 change_button.addEventListener("click", () => {
+    resetGame();
     spock_btn.classList.toggle("hide");
     lizard_btn.classList.toggle("hide");
     if (game_mode == 0) {
@@ -42,12 +43,12 @@ change_button.addEventListener("click", () => {
     
 });
 
-rock_btn.addEventListener("click", () => playRound("rock", game_mode));
-paper_btn.addEventListener("click", () => playRound("paper", game_mode));
-scissor_btn.addEventListener("click", () => playRound("scissor", game_mode));
-spock_btn.addEventListener("click", () => playRound("spock", game_mode));
-lizard_btn.addEventListener("click", () => playRound("lizard", game_mode));
-gun_btn.addEventListener("click", () => playRound("gun", game_mode));
+rock_btn.addEventListener("click", () => playRound("Rock", game_mode));
+paper_btn.addEventListener("click", () => playRound("Paper", game_mode));
+scissor_btn.addEventListener("click", () => playRound("Scissor", game_mode));
+spock_btn.addEventListener("click", () => playRound("Spock", game_mode));
+lizard_btn.addEventListener("click", () => playRound("Lizard", game_mode));
+gun_btn.addEventListener("click", () => playRound("Gun", game_mode));
 
 reset_btn.addEventListener("click", () => resetGame());
 overlay.addEventListener("click", () => closeModal());
@@ -72,7 +73,7 @@ function playRound (player_choice, game_mode) {
 }
 
 function versus (player_choice, computer_choice) {
-    if(player_choice=="gun") {
+    if(player_choice=="Gun") {
         header_subtext.textContent = "Gun Beats Everything";
         return 1;
     }
@@ -82,20 +83,20 @@ function versus (player_choice, computer_choice) {
         return 0;
     }
     //Player loses
-    else if ((player_choice == "rock" && computer_choice == "paper") || 
-    (player_choice == "spock" && computer_choice == "paper") ||
+    else if ((player_choice == "Rock" && computer_choice == "Paper") || 
+    (player_choice == "Spock" && computer_choice == "Paper") ||
 
-    (player_choice == "paper" && computer_choice == "scissor") ||
-    (player_choice == "lizard" && computer_choice == "scissor") ||
+    (player_choice == "Paper" && computer_choice == "Scissor") ||
+    (player_choice == "Lizard" && computer_choice == "Scissor") ||
 
-    (player_choice == "scissor" && computer_choice == "rock") ||
-    (player_choice == "lizard" && computer_choice == "rock") ||
+    (player_choice == "Scissor" && computer_choice == "Rock") ||
+    (player_choice == "Lizard" && computer_choice == "Rock") ||
 
-    (player_choice == "scissor" && computer_choice == "spock") ||
-    (player_choice == "rock" && computer_choice == "spock") ||
+    (player_choice == "Scissor" && computer_choice == "Spock") ||
+    (player_choice == "Rock" && computer_choice == "Spock") ||
 
-    (player_choice == "spock" && computer_choice == "lizard") ||
-    (player_choice == "paper" && computer_choice == "lizard")) {
+    (player_choice == "Spock" && computer_choice == "Lizard") ||
+    (player_choice == "Paper" && computer_choice == "Lizard")) {
         header_subtext.textContent = `${computer_choice} beats ${player_choice}`;
         return -1;
     }
@@ -112,19 +113,19 @@ function gameOver (player_score, computer_score) {
 
 function updateIcon (player_choice, computer_choice) {
     switch (player_choice) {
-        case 'rock':
+        case 'Rock':
             player_icon.textContent = '🪨';
             break;
-        case 'paper':
+        case 'Paper':
             player_icon.textContent = '🧻';
             break;
-        case 'scissor':
+        case 'Scissor':
             player_icon.textContent = '✂️';
             break;
-        case 'spock':
+        case 'Spock':
             player_icon.textContent = '🖖';
             break;
-        case 'lizard':
+        case 'Lizard':
             player_icon.textContent = '🦎';
             break
         case 'gun':
@@ -133,19 +134,19 @@ function updateIcon (player_choice, computer_choice) {
       }
     
       switch (computer_choice) {
-        case 'rock':
+        case 'Rock':
             computer_icon.textContent = '🪨';
             break;
-        case 'paper':
+        case 'Paper':
             computer_icon.textContent = '🧻';
             break;
-        case 'scissor':
+        case 'Scissor':
             computer_icon.textContent = '✂️';
             break;
-        case 'spock':
+        case 'Spock':
             computer_icon.textContent = '🖖';
             break;
-        case 'lizard':
+        case 'Lizard':
             computer_icon.textContent = '🦎';
             break
       }
