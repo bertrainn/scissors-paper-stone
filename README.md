@@ -1,6 +1,8 @@
 # scissors-paper-stone
 Scissors Paper Stone game against a CPU Player for the odin project assignment
 
+Application is live @ https://bertrainn.github.io/scissors-paper-stone/
+
 My first project building a website using html, css with JS on the backend. 
 
 A lot of tutorials and stack overflows were referenced in the making ot this project
