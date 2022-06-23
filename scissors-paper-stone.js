@@ -50,6 +50,7 @@ lizard_btn.addEventListener("click", () => playRound("lizard", game_mode));
 gun_btn.addEventListener("click", () => playRound("gun", game_mode));
 
 reset_btn.addEventListener("click", () => resetGame());
+overlay.addEventListener("click", () => closeModal());
 
 function playRound (player_choice, game_mode) { 
     let computer_choice = "";
