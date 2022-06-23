@@ -5,25 +5,65 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scissor Paper Stone Game</title>
-  <!-- <script src ="scissors-paper-stone.js" defer></script> -->
   <link rel="stylesheet" href="style.css"/>
+  <script src="scissors-paper-stone.js" defer></script>
 </head>
 <body>
   <header class="game_header">
-    <h1>Scissor Paper Stone The Game</h1>
+    <h1 id="game_header_text">Scissor Paper Stone The Game</h1>
     <div class="button_container">
       <button type="button" id="change_game">Change Game</button>
-      <button type="button" id="reset">Reset</button>
     </div>
   </header>
-  <main class="main_content">
+  <main class="main_container">
     <div class="main_text">
-      <h2>Please Make Your Choice</h2>
-      <h3>First To 5 Points Wins</h3>
+      <h2 id="header_text">Please Make Your Choice</h2>
+      <h3 id="header_subtext">First To 5 Points Wins</h3>
     </div>
+    <div class="score_container">
+      <div class="score_box">
+        <p class="score_icon" id="player_icon">?</p>
+        <p class="score_value" id="player_score">Player: 0</p>
+      </div>
+      <div class="score_box">
+        <p class="score_icon" id="computer_icon">?</p>
+        <p class="score_value" id="computer_score">Computer: 0</p>
+      </div>
+    </div>
+    <div class="choice_container">
+      <button class="choice" id="rock_btn">
+        <p class="icon">🪨</p>
+        <p class="text">Rock</p>
+      </button>
+      <button class="choice" id="scissor_btn">
+        <p class="icon">✂️</p>
+        <p class="text">Scissor</p>
+      </button>
+      <button class="choice" id="paper_btn">
+        <p class="icon">🧻</p>
+        <p class="text">Paper</p>
+      </button>
+      <button class="choice hide" id="lizard_btn">
+        <p class="icon">🦎</p>
+        <p class="text">Lizard</p>
+      </button>
+      <button class="choice hide" id="spock_btn">
+        <p class="icon">🖖</p>
+        <p class="text">Spock</p>
+      </button>
+    </div>
+    <button class="choice" id="gun_btn">
+      <p class="icon">🔫</p>
+    </button>
   </main>
   <footer class="copyright">
     <p>Created by <a href="https://github.com/bertrainn">Bertranne Lee</a>.</p>
   </footer>
+  <div class="modal" id="modal">
+    <div class="modal-header" id="endgametext">Lorem, ipsum dolor.
+    </div>
+    <button id="reset_btn">Reset Game</button>
+  </div>
+  <div id="overlay"></div>
 </body>
 </html>
